@@ -1,0 +1,23 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Adicionar um Artigo</h3>
+  
+  <div class="field">
+    <label for="descricao">Descrição:</label>
+    <input name="descricao" id="descricao" #novaDescricao>
+  </div>
+  <div class="field">
+    <label for="url">URL:</label>
+    <input name="url" id="url" #novaUrl>
+  </div>
+  <button (click)="adicionarArtigo(novaDescricao, novaUrl)"
+    class="ui positive right floated button">
+    Adicionar Artigo
+  </button>
+</form>
+
+<div class="ui grid posts">
+  <app-artigo 
+    *ngFor="let artigo of artigosOrdenados()" 
+    [artigo]="artigo">
+  </app-artigo>
+</div>
